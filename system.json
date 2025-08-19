@@ -36,6 +36,6 @@
   "license": "LICENSE.txt",
   "readme": "README.md",
   "url": "https://github.com/Fumble-Neo/EXIM",
-  "manifest": "https://raw.githubusercontent.com/EXIM/main/system.json",
+  "manifest": "https://raw.githubusercontent.com/Fumble-Neo/EXIM/main/system.json",
   "download": "https://github.com/Fumble-Neo/EXIM/archive/refs/heads/main.zip"
 }
