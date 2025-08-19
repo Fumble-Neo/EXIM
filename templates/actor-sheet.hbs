@@ -1,0 +1,90 @@
+
+<form class="exim sheet actor {{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <div class="ex-portrait-wrap" data-action="edit-image" title="Changer l’image">
+      <img class="ex-portrait" src="{{actor.img}}" alt="{{actor.name}}"/>
+    </div>
+    <div class="charname">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="Nom du personnage"/>
+    </div>
+  </header>
+
+  <nav class="ex-tabs" data-group="primary">
+    <a class="ex-tab" data-group="primary" data-tab="carac">{{localize "EXIM.Tabs.carac"}}</a>
+    <a class="ex-tab" data-group="primary" data-tab="inv">{{localize "EXIM.Tabs.inv"}}</a>
+    <a class="ex-tab" data-group="primary" data-tab="bio">{{localize "EXIM.Tabs.bio"}}</a>
+  </nav>
+
+  <section class="sheet-body">
+    <section class="ex-section" data-group="primary" data-tab="carac">
+      <div class="ex-grid">
+        <div class="ex-label">{{localize "EXIM.Aspect.endurance"}}</div>
+        <select class="ex-select" name="system.aspects.endurance">
+          {{#each (array "d20" "d12" "d10" "d8" "d6" "d4") as |die|}}
+            <option value="{{die}}" {{#if (eq die ../system.aspects.endurance)}}selected{{/if}}>{{die}}</option>
+          {{/each}}
+        </select>
+        <button type="button" class="ex-roll" data-action="roll" data-aspect="endurance">Lancer</button>
+
+        <div class="ex-label">{{localize "EXIM.Aspect.discretion"}}</div>
+        <select class="ex-select" name="system.aspects.discretion">
+          {{#each (array "d20" "d12" "d10" "d8" "d6" "d4") as |die|}}
+            <option value="{{die}}" {{#if (eq die ../system.aspects.discretion)}}selected{{/if}}>{{die}}</option>
+          {{/each}}
+        </select>
+        <button type="button" class="ex-roll" data-action="roll" data-aspect="discretion">Lancer</button>
+
+        <div class="ex-label">{{localize "EXIM.Aspect.reflexion"}}</div>
+        <select class="ex-select" name="system.aspects.reflexion">
+          {{#each (array "d20" "d12" "d10" "d8" "d6" "d4") as |die|}}
+            <option value="{{die}}" {{#if (eq die ../system.aspects.reflexion)}}selected{{/if}}>{{die}}</option>
+          {{/each}}
+        </select>
+        <button type="button" class="ex-roll" data-action="roll" data-aspect="reflexion">Lancer</button>
+
+        <div class="ex-label">{{localize "EXIM.Aspect.ressenti"}}</div>
+        <select class="ex-select" name="system.aspects.ressenti">
+          {{#each (array "d20" "d12" "d10" "d8" "d6" "d4") as |die|}}
+            <option value="{{die}}" {{#if (eq die ../system.aspects.ressenti)}}selected{{/if}}>{{die}}</option>
+          {{/each}}
+        </select>
+        <button type="button" class="ex-roll" data-action="roll" data-aspect="ressenti">Lancer</button>
+      </div>
+    </section>
+
+    <section class="ex-section" data-group="primary" data-tab="inv" style="display:none">
+      <h2>{{localize "EXIM.Inventory"}}</h2>
+      <div class="ex-inv-actions">
+        <button type="button" class="ex-btn ex-item-create" data-type="objet">{{localize "EXIM.Add"}} Objet</button>
+        <button type="button" class="ex-btn ex-item-create" data-type="arme">{{localize "EXIM.Add"}} Arme</button>
+        <button type="button" class="ex-btn ex-item-create" data-type="armure">{{localize "EXIM.Add"}} Armure</button>
+      </div>
+      <table class="ex-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>{{localize "EXIM.Qty"}}</th>
+            <th>{{localize "EXIM.Weight"}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each actor.items as |it|}}
+          <tr class="ex-item-row" data-item-id="{{it.id}}" draggable="true">
+            <td class="name"><a class="ex-item-open">{{it.name}}</a></td>
+            <td><input type="number" name="item.{{it.id}}.system.qty" value="{{it.system.qty}}" data-dtype="Number"/></td>
+            <td><input type="number" name="item.{{it.id}}.system.poids" value="{{it.system.poids}}" data-dtype="Number"/></td>
+            <td><a class="ex-item-delete" title="Supprimer">{{localize "EXIM.Delete"}}</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="ex-dropzone">Glissez des objets ici depuis d’autres fiches ou compendiums</div>
+    </section>
+
+    <section class="ex-section" data-group="primary" data-tab="bio" style="display:none">
+      <h2>Bio</h2>
+      <textarea name="system.bio" style="width:100%;min-height:160px;">{{system.bio}}</textarea>
+    </section>
+  </section>
+</form>

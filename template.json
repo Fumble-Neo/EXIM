@@ -1,0 +1,52 @@
+{
+  "Actor": {
+    "types": [
+      "personnage"
+    ],
+    "templates": {
+      "base": {
+        "aspects": {
+          "endurance": "d12",
+          "discretion": "d12",
+          "reflexion": "d12",
+          "ressenti": "d12"
+        },
+        "bio": ""
+      }
+    },
+    "personnage": {
+      "templates": [
+        "base"
+      ]
+    }
+  },
+  "Item": {
+    "types": [
+      "objet",
+      "arme",
+      "armure"
+    ],
+    "templates": {
+      "base": {
+        "description": "",
+        "qty": 1,
+        "poids": 0
+      }
+    },
+    "objet": {
+      "templates": [
+        "base"
+      ]
+    },
+    "arme": {
+      "templates": [
+        "base"
+      ]
+    },
+    "armure": {
+      "templates": [
+        "base"
+      ]
+    }
+  }
+}

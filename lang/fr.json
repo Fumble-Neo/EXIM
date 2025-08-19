@@ -1,0 +1,18 @@
+{
+  "EXIM.Aspect.endurance": "Endurance",
+  "EXIM.Aspect.discretion": "Discrétion",
+  "EXIM.Aspect.reflexion": "Réflexion",
+  "EXIM.Aspect.ressenti": "Ressenti",
+  "EXIM.Roll": "Jet d'{aspect}",
+  "EXIM.DieExhausted": "épuisé",
+  "EXIM.Success": "Succès garanti — gérez les conséquences dans la fiction.",
+  "EXIM.Consequence": "⚠️ Conséquences : résultat ≤ 3 → le dé s'use (descend d'un cran).",
+  "EXIM.Tabs.carac": "Caractéristiques",
+  "EXIM.Tabs.inv": "Inventaire",
+  "EXIM.Tabs.bio": "Bio",
+  "EXIM.Inventory": "Inventaire",
+  "EXIM.Add": "Ajouter",
+  "EXIM.Delete": "Supprimer",
+  "EXIM.Qty": "Qté",
+  "EXIM.Weight": "Poids"
+}
