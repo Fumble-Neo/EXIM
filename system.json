@@ -1,6 +1,5 @@
 {
   "id": "exim",
-  "type": "system",
   "title": "EXIM",
   "description": "!",
   "version": "1.2.3",
@@ -14,7 +13,6 @@
       "url": "https://www.instagram.com/neofumble/?hl=fr + https://www.instagram.com/haciendaroliste/?hl=fr"
     }
   ],
-  "template": "template.json",
   "esmodules": [
     "system/main.js"
   ],
